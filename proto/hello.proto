@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+// indicating where the .pb files will be sent after the protoc command
+option go_package = "./pb";
+
+// Hello is a server
+service Hello {
+    rpc SayHello(HelloRequest) returns (HelloResponse) {}
+}
+
+// HelloRequest defines request structure message
+message HelloRequest {
+    string name = 1;
+}
+
+// HelloResponse defines response structure message
+message HelloResponse {
+    string response = 1;
+}
